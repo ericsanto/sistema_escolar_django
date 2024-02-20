@@ -1,7 +1,7 @@
 from django.db import models
-from disciplina.models import Subjects
+from materia.models import Subject
 
 
 class Student(models.Model):
     name = models.CharField('Nome', max_length=255)
-    subjects = models.ManyToManyField(Subjects)
+    subject = models.ManyToManyField(Subject)
