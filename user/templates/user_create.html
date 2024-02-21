@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="" method="POST" autocomplete="off">
+    {% csrf_token %}
+    {{ form.non_fields.error }}
+
+    <label for="{{ form.registration.id_for_label }}"></label>
+    {{ form.registration }}
+    {{ form.registration.errors }}
+
+    <label for="{{ form.password1.id_for_label }}">Senha</label>
+    {{ form.password1 }}
+    {{ form.password1.errors }}
+      
+    <label for="{{ form.password2.id_for_label }}">Confirmação da Senha</label>
+    {{ form.password2 }}
+    {{ form.password2.errors }}
+
+    <button type="submit">Cadastra</button>
+  </form>
+</body>
+</html>
