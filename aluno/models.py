@@ -2,6 +2,7 @@ from django.db import models
 import re
 import random
 from datetime import date
+from materia.models import Subject
 
 
 class Student(models.Model):
@@ -16,6 +17,7 @@ class Student(models.Model):
         'Nome da Mãe', max_length=255, blank=True, null=True)
     registration = models.CharField(
         'Matrícula', max_length=15, blank=True, null=True)
+    subject = models.ManyToManyField(Subject)
 
     def __str__(self):
         return self.name
@@ -28,3 +30,4 @@ class Student(models.Model):
                 num.append(str(random.randint(0, 9)))
             values = [year] + num
             self.registration = ''.join(values)
+        super().save(*args, **kwargs)
