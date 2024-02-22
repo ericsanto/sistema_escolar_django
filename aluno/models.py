@@ -17,7 +17,7 @@ class Student(models.Model):
         'Nome da Mãe', max_length=255, blank=True, null=True)
     registration = models.CharField(
         'Matrícula', max_length=15, blank=True, null=True)
-    subject = models.ManyToManyField(Subject)
+    subject = models.ManyToManyField(Subject, verbose_name='Matérias')
 
     def __str__(self):
         return self.name
