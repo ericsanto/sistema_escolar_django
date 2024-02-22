@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <header>
+      <div class="image-header">
+        <p>SCHOOLPRO</p>
+      </div>
+
+      <ul class="ul-header">
+        <li class="buttons-header">Inicio</li>
+        <li class="buttons-header">Sobre</li>
+        <li class="buttons-header">Professores</li>
+        <li class="buttons-header">Direção</li>
+      </ul>
+    </header>
+
+    <div class="container">
+      <div class="links">
+        <a href="{% url 'student_subjects' %}"><li class="options">Minhas Turmas</li></a>
+        <a href="{% url 'grade_list' %}"><li class="options">Minhas Notas</li></a>
+        <a href=""><li class="options">Consultar Histórico</li></a>
+        <a href=""><li class="options">Sair</li></a>
+      </div>
+    </div>
+</body>
+</html>

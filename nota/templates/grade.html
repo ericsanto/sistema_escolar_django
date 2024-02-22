@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    {% for student in student %}
+      <h1>Boletim Escolar - {{ student.name }}</h1>
+    {% endfor %}
+    <table>
+        <tr>
+            <th>Disciplina</th>
+            <th>Primeira Nota</th>
+            <th>Segunda Nota</th>
+            <th>Media</th>
+        </tr>
+        {% for grade in grades %}
+        <tr>
+          
+            <td>{{ grade.subject }}</td>
+            <td>{{ grade.first_grade }}</td>
+            <td>{{ grade.second_grade }}</td>
+            <td>{{ grade.average }}</td>   
+        </tr>
+    {% endfor %}
+    </table>
+</body>
+</html>
